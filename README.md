@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Chave Pública
+abb66c1eaacf1c245c80d32c6240c5e6
+
+## Chave Privada
+72dc88ce1bd3da76f7f12f49a6c98b306e374e40
+
+developer.marvel.com

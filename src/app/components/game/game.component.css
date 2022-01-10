@@ -1,0 +1,20 @@
+.row-game {
+    margin-top: 1%;
+    display: grid !important;
+    grid-template-columns: repeat(3, 0fr);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.card:hover {
+    cursor: pointer;
+}

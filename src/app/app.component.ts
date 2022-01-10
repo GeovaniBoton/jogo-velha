@@ -1,3 +1,5 @@
+import { map } from 'rxjs/operators';
+import { MarvelService } from './core/marvel.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +9,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'jogo-velha';
+
+  constructor(private marvelService: MarvelService) { }
+
+  ngOnInit() {}
 }

@@ -1,0 +1,21 @@
+<div class="row-search">
+    <input type="text" class="input-search-hero" [(ngModel)]="heroName" placeholder="Digite o nome do super herói">
+    <button class="button-search-hero" (click)="getHeroByName(this.heroName)">Buscar</button>
+</div>
+
+<div class="row" *ngIf="heroesList.length > 0">
+    <div class="card-hero" *ngFor="let hero of heroesList; let i = index">
+        <img [src]="hero.urlImage" [width]="125"  [height]="125" (click)="selectHero(hero)" [class]="hero.name">
+        <div>{{hero.name}}</div>
+    </div>
+</div>
+
+<div class="not-found" *ngIf="heroesList.length === 0">
+    Super herói não encontrado!!!
+</div>
+
+<app-heroes-selected [players]="players"></app-heroes-selected>
+
+<div class="row-play-game" *ngIf="players.length === 2">
+    <button class="button-play-game">Iniciar Partida</button>
+</div>

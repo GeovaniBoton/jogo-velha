@@ -1,0 +1,57 @@
+.row {
+    margin-top: 1%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    color: rgb(255, 255, 255);
+}
+
+.card-hero {
+    margin-top: 10px;
+}
+
+.card-hero img:hover { 
+    width: 135px;
+    height: 135px;
+    cursor: pointer;
+}
+
+.input-search-hero {
+    width: 40%;
+    height: 30px;
+    border-radius: 10px;
+}
+
+.button-search-hero {
+    border-radius: 10px;
+    height: 35px;
+    width: 100px;
+    margin-top: auto;
+    background-color: rgb(18, 10, 146);
+    color: white;
+    border: none;
+}
+
+.button-search-hero:hover {
+    border-radius: 10px;
+    height: 35px;
+    width: 100px;
+    margin-top: auto;
+    border: 1px solid;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+.not-found {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.row-play-game {
+    display: flex;
+    justify-content: center;
+}
