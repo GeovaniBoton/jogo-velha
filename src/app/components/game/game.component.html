@@ -12,8 +12,12 @@
     </div>
 </div>
 
+<div class="title-heroes-selected" *ngIf="showGame">
+    Faça sua jogada {{ this.currentPlayer }}
+</div>
+
 <div class="row-game" *ngIf="showGame">
-    <div class="card" (click)="setPlay(i, currentPlayer)" *ngFor="let game of game; let i = index">
+    <div class="card" (click)="setPlay(i, this.currentPlayer)" *ngFor="let game of game; let i = index">
         <div class="result">{{ game.value }}</div>
     </div>
 </div>

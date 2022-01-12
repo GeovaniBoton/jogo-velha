@@ -2,8 +2,9 @@ import { HeroSelectionModel } from './model/hero-selection.model';
 import { iPlayer } from './../game/interfaces/player.interface';
 import { MarvelService } from './../../core/marvel.service';
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hero-selection',
@@ -20,6 +21,8 @@ export class HeroSelectionComponent implements OnInit {
 
   private subscriptionList: Array<Subscription> = [];
 
+  protected ngUnsubscribe: Subject<void> = new Subject<void>();
+
   constructor(private marvelService: MarvelService, private router: Router) { }
 
   ngOnInit(): void {
@@ -33,8 +36,11 @@ export class HeroSelectionComponent implements OnInit {
   }
 
   private getHeroesList(name: string = ''){
+    this.ngUnsubscribe.next();
+
     this.subscriptionList.push(
-      this.marvelService.getAllHeroes(name).subscribe(
+      this.marvelService.getAllHeroes(name).pipe(takeUntil(this.ngUnsubscribe))
+      .subscribe(
         data => {
           data.forEach(hero => {
             hero.urlImage = hero.thumbnail.path  + '.' + hero.thumbnail.extension;
@@ -51,8 +57,13 @@ export class HeroSelectionComponent implements OnInit {
       this.players.push(player);
   }
 
-  getHeroByName(name: string){
-    this.getHeroesList(name)
+  getHeroByName(clearName: boolean = false){
+    if(clearName)
+      this.heroName = '';
+    console.log('hero name', this.heroName)
+   
+    if(this.heroName.length > 2 || this.heroName == '')
+      this.getHeroesList(this.heroName)
   }
 
   selectHero(hero) {
@@ -67,10 +78,5 @@ export class HeroSelectionComponent implements OnInit {
   playGame() {
     this.router.navigate([`/game`],  { queryParams: this.players } ) ;
   }
-
-  // teste(event) {
-  //   this.heroName = event.target.value;
-  //   console.log(event, this.heroName)
-  // }
 
 }

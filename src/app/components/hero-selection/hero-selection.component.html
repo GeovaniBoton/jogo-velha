@@ -2,10 +2,11 @@
     <input
         type="text"
         class="input-search-hero"
-        [(ngModel)]="heroName"
+        [(ngModel)]="this.heroName"
+        (keyup)="getHeroByName()"
         placeholder="Digite o nome do super herói"
     >
-    <button class="button-search-hero" type="button" (click)="getHeroByName(this.heroName)">Buscar</button>
+    <button class="button-search-hero" type="button" (click)="getHeroByName(true)">Limpar</button>
 </div>
 
 <div class="row" *ngIf="heroesList.length > 0">
