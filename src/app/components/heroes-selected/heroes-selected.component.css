@@ -1,0 +1,22 @@
+.row-heroes-selected {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px 20px 0px;
+}
+
+.hero-selected {
+    padding-left: 10px;
+}
+
+.player-name {
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+}
+
+.title-heros-selected {
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+}

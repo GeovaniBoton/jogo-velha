@@ -10,6 +10,8 @@ export class HeroesSelectedComponent implements OnInit {
 
   @Input() players: Array<iPlayer> = [];
 
+  @Input() showMessageHeroesSelected: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {

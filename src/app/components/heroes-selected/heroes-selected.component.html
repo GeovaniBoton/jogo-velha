@@ -1,1 +1,12 @@
-<p>heroes-selected works!</p>
+<div class="title-heros-selected" *ngIf="showMessageHeroesSelected" >
+    Herois selecionados
+</div>
+
+<div class="row-heroes-selected">
+    <div class="hero-selected" *ngFor="let player of players">
+        <img [src]="player.hero_image" [width]="125" [height]="125">
+        <div class="player-name">{{player.hero_name}}</div>
+        <div class="player-name">Player {{player.player_id}}</div>
+    </div>
+</div>
+

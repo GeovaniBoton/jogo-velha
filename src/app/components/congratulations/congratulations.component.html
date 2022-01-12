@@ -1,0 +1,26 @@
+<div class="card-winner" *ngIf="playerWinner.player_id !== playerVelha" >
+    <div class="row">
+        <div class="card-title">Parabens!!!</div>
+        <div class="align-self-center d-flex justify-content-center">
+            <img class="trofeu" src="assets/img/trofeu.png">
+        </div>
+        <div class="card-footer">O player {{playerWinner.player_id}} venceu</div>
+        <div class="actions-winner">
+            <button class="button-play" (click)="newGame()">Jogar novamente</button>
+            <button class="button-reload" (click)="refresh()">Recarregar</button>
+        </div>
+    </div>
+</div>
+
+<div class="card-winner" *ngIf="playerWinner.player_id === playerVelha" >
+    <div class="row">
+        <div class="align-self-center d-flex justify-content-center">
+            <img class="trofeu" src="assets/img/velha.png">
+        </div>
+        <div class="card-footer">Deu velha!!!</div>
+        <div class="actions-winner">
+            <button class="button-play" (click)="newGame()">Jogar novamente</button>
+            <button class="button-reload" (click)="refresh()">Recarregar</button>
+        </div>
+    </div>
+</div>

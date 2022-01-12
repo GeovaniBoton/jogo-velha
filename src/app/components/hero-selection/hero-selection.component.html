@@ -1,6 +1,11 @@
 <div class="row-search">
-    <input type="text" class="input-search-hero" [(ngModel)]="heroName" placeholder="Digite o nome do super herói">
-    <button class="button-search-hero" (click)="getHeroByName(this.heroName)">Buscar</button>
+    <input
+        type="text"
+        class="input-search-hero"
+        [(ngModel)]="heroName"
+        placeholder="Digite o nome do super herói"
+    >
+    <button class="button-search-hero" type="button" (click)="getHeroByName(this.heroName)">Buscar</button>
 </div>
 
 <div class="row" *ngIf="heroesList.length > 0">
@@ -14,8 +19,19 @@
     Super herói não encontrado!!!
 </div>
 
-<app-heroes-selected [players]="players"></app-heroes-selected>
+<div class="row-play-game selection-player" *ngIf="!currentPlayer && this.players.length < 2">
+    Escolha seu personagem jogador X
+</div>
+<div class="row-play-game selection-player" *ngIf="currentPlayer && this.players.length < 2">
+    Escolha seu personagem jogador O
+</div>
+
+<app-heroes-selected
+    *ngIf="players.length > 0"
+    [players]="players"
+>
+</app-heroes-selected>
 
 <div class="row-play-game" *ngIf="players.length === 2">
-    <button class="button-play-game">Iniciar Partida</button>
+    <button type="button" class="button-search-hero" (click)="playGame()">Iniciar Partida</button>
 </div>

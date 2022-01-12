@@ -18,7 +18,7 @@ export class MarvelService {
 
   getAllHeroes(name?: string): Observable<any> {
     let query: string = '';
-    if(name) query += `&name=${name}`;
+    if(name) query += `&nameStartsWith=${name}`;
 
     return this.httpClient.get<any>(`${this.URL_API}` + query)
     .pipe(map( data => data.data.results));

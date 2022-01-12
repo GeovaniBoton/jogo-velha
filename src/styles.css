@@ -1,3 +1,21 @@
 body {
     background-image: url('https://images.unsplash.com/photo-1569169507605-f91e088ce91a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&w=1000&q=80');
+    /* background-image: linear-gradient(rgb(20, 19, 26), rgb(20, 18, 59), rgb(18, 10, 146),rgb(81, 151, 216));
+    height: auto; */
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.text-white {
+    color: rgb(255, 255, 255);
+}
+
+.align-self-center {
+    align-self: center;
 }

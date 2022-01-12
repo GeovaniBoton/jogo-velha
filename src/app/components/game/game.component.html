@@ -1,5 +1,27 @@
-<div class="row-game">
-    <div class="card" *ngFor="let game of game; let i = index">
-        <div class="result">{{game.value}}<div>
+<app-heroes-selected
+    [showMessageHeroesSelected]="false"
+    [players]="players"
+    *ngIf="players.length === 2"
+>
+</app-heroes-selected>
+
+<div class="title-heroes-selected">
+    <div *ngFor="let player of players; let i = index">
+        {{player.scoreboard}}
+        <ng-containter *ngIf="i === 0">x&nbsp;</ng-containter>
     </div>
 </div>
+
+<div class="row-game" *ngIf="showGame">
+    <div class="card" (click)="setPlay(i, currentPlayer)" *ngFor="let game of game; let i = index">
+        <div class="result">{{ game.value }}</div>
+    </div>
+</div>
+
+<app-congratulations
+    class="congratulations"
+    *ngIf="!showGame" 
+    [playerWinner]="playerWinner"
+    (isNewGame)="newGame($event)"
+>
+</app-congratulations>
