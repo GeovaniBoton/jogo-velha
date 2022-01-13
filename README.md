@@ -26,10 +26,10 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## Chave Pública
-abb66c1eaacf1c245c80d32c6240c5e6
+## Sobre a seleção de personagens
+Está sendo exibido os 20 primeiros personagens retornados pela API, porém se eu digitar algum nome ele irá retornar todos os personagens que começam com aquele nome.
+Ex: Spider -> Retorná todos os personagens listados que começam com a palavra spider.
 
-## Chave Privada
-72dc88ce1bd3da76f7f12f49a6c98b306e374e40
 
-developer.marvel.com
+## Manual
+Estará anexado um vídeo dentro do projeto na pasta assets e também junto ao e-mail encaminhado
